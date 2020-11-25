@@ -1,0 +1,23 @@
+<h1><%= @book.bookname %></h1>
+
+<%= flash[:notice] %>
+
+<ul>
+  <li><%= @book.author %></li>
+  <li><%= @book.price %></li>
+  <li><%= @book.comment %></li>
+</ul>
+
+
+<%= link_to '新增文章', new_book_post_path(@book) %>
+
+
+
+
+<ul>
+  <% @posts.each do |post| %>
+  <li>
+    <%= link_to post.title, post_path(post) %>
+  </li>
+  <% end %>
+</ul>

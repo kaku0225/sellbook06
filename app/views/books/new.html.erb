@@ -1,0 +1,33 @@
+<h1>新增</h1>
+
+<% if @book.errors.any? %>
+  <ul>
+    <%= @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@book) do |form| %>
+
+<div>
+  <%= form.label :bookname %>
+  <%= form.text_field :bookname %>
+</div>
+<div>
+  <%= form.label :author %>
+  <%= form.text_field :author %>
+</div>
+<div>
+  <%= form.label :price %>
+  <%= form.number_field :price %>
+</div>
+<div>
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+</div>
+<div>
+  <%= form.submit '送出' %>
+</div>
+
+<% end %>
